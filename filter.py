@@ -15,6 +15,6 @@ for row in lines:
   beds = FORCE_NUMERICAL_REGEX.sub('', beds)
   if (any(s in ber for s in BERS) and
       int(price) <= PRICE_LIMIT and
-      (int(beds) >= BEDS_LIMIT)):
+      beds.isdigit() and (int(beds) >= BEDS_LIMIT)):
     print (row.strip())
 
